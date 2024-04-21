@@ -38,7 +38,7 @@ error: metadata-generation-failed
 
 ```
 
-The error was solved after the execution of the following commands:
+The error was solved after the execution of the following commands, [published on Stack Overflow](https://stackoverflow.com/questions/63862010/modulenotfounderror-no-module-named-mininet):
 
 ```
 sudo -i
