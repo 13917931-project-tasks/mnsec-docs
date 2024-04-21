@@ -69,3 +69,5 @@ error: metadata-generation-failed
 ╰─> See above for output.
 ```
 
+I tried to install honeypots module following the instructions of the [official repository](https://github.com/qeeqbox/honeypots), still the error persisted.
+
