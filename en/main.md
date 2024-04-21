@@ -7,10 +7,8 @@
 ```
 git clone https://github.com/mininet-sec/mininet-sec
 cd mininet-sec
-python3.9 -m pip install .
+python3 -m pip install .
 ```
-
-In the official documentation, the last command was "python3 -m pip install .", however, I executed it and got the error response "No module named pip", which was solved after executing "python3.9 -m pip install ." instead.
 
 After executing this last command, I received this following error response, despite the fact that mininet was already installed in my system:
 
