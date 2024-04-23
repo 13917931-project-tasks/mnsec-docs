@@ -37,7 +37,8 @@ mnsec --topo linear,3 --apps h1:ssh:port=22,h1:http:port=80,h2:ldap,h3:smtp,h3:i
 for sw in $(curl -s http://127.0.0.1:8181/api/kytos/topology/v3/switches | jq -r '.switches[].id'); do curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/switches/$sw/enable; curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/interfaces/switch/$sw/enable; done
 
 for l in $(curl -s http://127.0.0.1:8181/api/kytos/topology/v3/links | jq -r '.links[].id'); do curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/links/$l/enable; done
-
+```
+```
 curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/mef_eline/v2/evc/ -d '{"name": "my evc1", "dynamic_backup_path": true, "enabled": true, "uni_a": {"interface_id": "00:00:00:00:00:00:00:01:1"}, "uni_z": {"interface_id": "00:00:00:00:00:00:00:01:2"}}'
 ```
 
