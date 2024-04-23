@@ -2,7 +2,7 @@
 
 Using Kytos-ng SDN controller:
 
-## 1. Activate Kytos;
+### 1. Activate Kytos;
 
 ```
 source test_env/bin/activate
@@ -16,7 +16,7 @@ docker ps
 kytosd -f --database mongodb
 ```
 
-## 2. Iniciate mnsec;
+### 2. Iniciate mnsec;
 
 Mnsec can be used with pre-defined topologies:
 
@@ -34,7 +34,7 @@ sudo su
 mnsec --topo linear,3 --apps h1:ssh:port=22,h1:http:port=80,h2:ldap,h3:smtp,h3:imap,h3:pop3 --controller=remote,ip=127.0.0.1
 ```
 
-## 3. Activation of NOS;
+### 3. Activation of NOS;
 
 ```
 for sw in $(curl -s http://127.0.0.1:8181/api/kytos/topology/v3/switches | jq -r '.switches[].id'); do curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/switches/$sw/enable; curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/interfaces/switch/$sw/enable; done
