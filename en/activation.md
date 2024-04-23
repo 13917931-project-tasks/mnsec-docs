@@ -20,6 +20,7 @@ kytosd -f --database mongodb
 Mnsec can be used with pre-defined topologies:
 
 ```
+sudo su
 cd mininet-sec
 cd examples
 python3 firewall.py
@@ -28,6 +29,7 @@ python3 firewall.py
 or the user can create a custom topology, for instance:
 
 ```
+sudo su
 mnsec --topo linear,3 --apps h1:ssh:port=22,h1:http:port=80,h2:ldap,h3:smtp,h3:imap,h3:pop3 --controller=remote,ip=127.0.0.1
 ```
 
