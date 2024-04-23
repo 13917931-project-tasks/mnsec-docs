@@ -18,10 +18,9 @@ kytosd -f --database mongodb
 
 ### 2. Iniciate mnsec;
 
-Mnsec can be used with pre-defined topologies:
+**It is important to use root mode while executing these commands.** Mnsec can be used with pre-defined topologies:
 
 ```
-sudo su
 cd mininet-sec
 cd examples
 python3 firewall.py
