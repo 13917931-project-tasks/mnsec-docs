@@ -29,7 +29,7 @@ python3 firewall.py
 or the user can create a custom topology, for instance:
 
 ```
-mnsec --topo linear,3 --apps h1:ssh:port=22,h1:http:port=80,h2:ldap,h3:smtp,h3:imap,h3:pop3 --controller=remote,ip=127.0.0.1
+mnsec --topo linear,3 --apps h3:ssh:port=22,h3:http:port=80,h3:ldap,h3:smtp,h3:imap,h3:pop3 --controller=remote,ip=127.0.0.1
 ```
 
 ### 3. Activation of NOS;
