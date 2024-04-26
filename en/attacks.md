@@ -49,7 +49,9 @@ Is a Hydra attacks parameter which promotes the usage of diverse IP addresses to
 
 #### TCP Flood
 
-Using ports not related to specific fuons in internet traffic:
+Using ports not related to specific functions in internet traffic:
+
+1. alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1000013; priority:1; rev:1;)
 
 **SSH port:**
 
