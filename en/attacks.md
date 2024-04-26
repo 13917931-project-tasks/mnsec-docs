@@ -71,3 +71,9 @@ Using ports not related to specific fuons in internet traffic:
 1. alert udp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL UDP"; classtype:trojan-activity; sid:1000014; priority:1; rev:1;)
 
 #### ICMP Flood 
+
+Was not detected by any rule
+
+#### Fragmentation
+
+Flood attacks which were related to seding packets with high data size, promoting packets fragmentation, were not detected.
