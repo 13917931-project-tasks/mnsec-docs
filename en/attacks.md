@@ -45,4 +45,29 @@ Rule that generated alerts:
 
 #### --rand-source
 
+Is a Hydra attacks parameter which promotes the usage of diverse IP addresses to execute floods. In this sense, all ICMP, UDP and TCP flood attacks triggered ET DROP rules. These rules are based in the detection of activities related to IP addresses known by their relation with flood attakcs.
 
+#### TCP Flood
+
+Using ports not related to specific fuons in internet traffic:
+
+**SSH port:**
+
+1. alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"ET SCAN Potential SSH Scan"; flow:to_server; flags:S,12; threshold: type both, track by_src, count 5, seconds 120; reference:url,en.wikipedia.org/wiki/Brute_force_attack; classtype:attempted-recon; sid:2001219; rev:20; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
+
+**POP3 port:**
+
+1. alert tcp $EXTERNAL_NET any -> $HOME_NET 110 (msg: "Possible POP3 Brute Force attack"; flags:S; flow: to_server; threshold: type limit, track by_src, count 5, seconds 20; classtype: credential-theft; sid: 100000138; rev:1;)
+2. alert tcp $EXTERNAL_NET any -> $HOME_NET 110 (msg:"ET SCAN Rapid POP3 Connections - Possible Brute Force Attack"; flow:to_server; flags: S,12; threshold: type both, track by_src, count 30, seconds 120; classtype:misc-activity; sid:2002992; rev:7; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
+3. alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1000013; priority:1; rev:1;)
+
+**IMAP Flood**
+
+1. alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"ET SCAN Rapid IMAP Connections - Possible Brute Force Attack"; flow:to_server; flags: S,12; threshold: type both, track by_src, count 30, seconds 60; classtype:misc-activity; sid:2002994; rev:7; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
+2. alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1000013; priority:1; rev:1;)
+
+#### UDP Flood 
+
+1. alert udp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL UDP"; classtype:trojan-activity; sid:1000014; priority:1; rev:1;)
+
+#### ICMP Flood 
