@@ -1,6 +1,6 @@
 # Execution and detection of attacks using mnsec and Suricata 
 
-The usage of Mininet-sec deatiled in this text was based in the use of the basic topology cantained in *firewall.py* file.
+The usage of Mininet-sec detailed in this text was based in the use of the basic topology contained in *firewall.py* file.
 
 ## Brute Force
 
