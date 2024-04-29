@@ -46,26 +46,3 @@ cd ~
 git clone https://github.com/mininet/mininet.git
 export PYTHONPATH=$PYTHONPATH:$HOME/mininet
 ```
-
-However, another error appeared:
-
-```
-Processing /home/mayara/mininet-sec
-  Preparing metadata (setup.py) ... error
-  error: subprocess-exited-with-error
-  
-  × python setup.py egg_info did not run successfully.
-  │ exit code: 1
-  ╰─> [1 lines of output]
-      Cannot find required module honeypots.
-      [end of output]
-  
-  note: This error originates from a subprocess, and is likely not a problem with pip.
-error: metadata-generation-failed
-
-× Encountered error while generating package metadata.
-╰─> See above for output.
-```
-
-I tried to install honeypots module following the instructions of the [official repository](https://github.com/qeeqbox/honeypots), still the error persisted.
-
