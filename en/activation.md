@@ -1,6 +1,6 @@
 # Activation
 
-Kytos-ng is the SDN controller which will be used allong with mnsec. It can be activated in different ways. Each one of the processes further descrbid should be executed in different windows.
+Kytos-ng is the SDN controller which will be used allong with mnsec. It can be activated in different ways. Each one of the processes further described should be executed in different windows.
 
 ### 1. Activate Kytos;
 
