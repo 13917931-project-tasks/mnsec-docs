@@ -52,15 +52,15 @@ Is a Hydra attacks parameter which promotes the usage of diverse IP addresses to
 Usage example (Executed in mnsec shell):
 
 ```
-<mnsec-host> hping3 <protocol-or-flag> --flood -p <port-number> <ip-address> 
+<mnsec-host> hping3 <protocol-or-tcp-flag> --flood -p <port-number> <ip-address> 
 ```
 
 ```
-hping3 --icmp/--udp --flood --rand-source -p 567 --data 10 192.168.0.1
+hping3 --icmp/--udp --flood --rand-source -p 567 --data 10 10.0.0.1
 ```
 
 ```
-hping3 -S/-P/-U/-A/-F --flood --rand-source -p 567 --data 10 192.168.0.1
+hping3 -S/-P/-U/-A/-F --flood --rand-source -p 567 --data 10 10.0.0.1
 ```
 
 #### TCP Flood
