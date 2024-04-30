@@ -45,7 +45,7 @@ Rule that generated alerts:
 
 #### --rand-source
 
-Is a Hydra attacks parameter which promotes the usage of diverse IP addresses to execute floods. In this sense, all ICMP, UDP and TCP flood attacks triggered ET DROP rules. These rules are based in the detection of activities related to IP addresses known by their relation with flood attakcs.
+Is a Hping3 attacks parameter which promotes the usage of diverse IP addresses to execute floods. In this sense, all ICMP, UDP and TCP flood attacks triggered ET DROP rules. These rules are based in the detection of activities related to IP addresses known by their relation with flood attakcs.
 
 #### Single IP attacks
 
@@ -56,11 +56,11 @@ Usage example (Executed in mnsec shell):
 ```
 
 ```
-hping3 --icmp/--udp --flood --rand-source -p 567 --data 10 10.0.0.1
+o1 hping3 --icmp/--udp --flood --rand-source -p 567 --data 10 192.168.1.103 (h3 host ip address)
 ```
 
 ```
-hping3 -S/-P/-U/-A/-F --flood --rand-source -p 567 --data 10 10.0.0.1
+o1 hping3 -S/-P/-U/-A/-F --flood --rand-source -p 567 --data 10 192.168.1.103 (h3 host ip address)
 ```
 
 #### TCP Flood
