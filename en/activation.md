@@ -66,7 +66,7 @@ mnsec --topo linear,3 --apps h3:ssh:port=22,h3:http:port=80,h3:ldap,h3:smtp,h3:i
 
 In this case, we are creating a linear topology with 3 hosts (h1,h2,h3), and the h3 has some important ports in h3 defined as open, in order to teste attacks.
 
-### 3. Activation of NOS;
+### 3. (Optional) Activation of NOS;
 
 ```
 for sw in $(curl -s http://127.0.0.1:8181/api/kytos/topology/v3/switches | jq -r '.switches[].id'); do curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/switches/$sw/enable; curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/interfaces/switch/$sw/enable; done
