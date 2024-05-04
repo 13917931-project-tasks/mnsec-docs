@@ -65,7 +65,7 @@ or the user can create a custom topology, for instance:
 mnsec --topo linear,3 --apps h3:ssh:port=22,h3:http:port=80,h3:ldap,h3:smtp,h3:imap,h3:pop3 --controller=remote,ip=127.0.0.1
 ```
 
-In this case, we are creating a linear topology with 3 hosts (h1,h2,h3), and the h3 has some important ports in h3 defined as open, in order to teste attacks.
+In this case, we are creating a linear topology with 3 hosts (h1,h2,h3), and the h3 has some important ports in h3 defined as open, in order to test attacks.
 
 ### 3. Activation of NOS;
 
