@@ -53,10 +53,10 @@ This is the network established:
 9. s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0 s1-eth3:h3-eth0 s1-eth4:fw0-eth0
 10. s2 lo:  s2-eth1:srv1-eth0 s2-eth2:srv2-eth0 s2-eth3:fw0-eth1
 
-nettap1 is a swich which promotes the connection between the internal components of the net and the internet, through the firewall interface fw0-eth2. It also uses the interface nettap-eth2 to connect with o1 host. There are also the interfaces which promtes the connection of the firewall and the internet:
+nettap1 is a switch which promotes the connection between the internal components of the net and the internet, through the firewall interface fw0-eth2. It also uses the interface nettap-eth2 to connect with o1 host. Moreover, there are interfaces which promotes the connection of the firewall and the internet:
 
-1. nettap1-ethmona: Connection with the internet, promotes the sending of traffic of the firewall towards internet.
-2. nettap1-ethmonb: Connection with the internet, promotes the sending of traffic of the internet towards firewall.
+1. nettap1-ethmona: Connection with the internet, promotes the sending of traffic from the firewall towards internet.
+2. nettap1-ethmonb: Connection with the internet, promotes the sending of traffic from the internet towards firewall.
 
 
 or the user can create a custom topology, for instance:
