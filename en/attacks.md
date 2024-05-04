@@ -4,6 +4,19 @@ The usage of Mininet-sec detailed in this text was based in the use of the basic
 
 ## Brute Force
 
+There are plenty of authentication techniques which can be used in Brute Force attacks: In this case, the main techinique used is *LOGIN*.
+
+- SSH: LOGIN (default), PLAIN, CRAM-MD5, DIGEST-MD5, NTLM
+   - Additionally TLS encryption via STARTTLS can be enforced with the TLS option. Example: smtp://target/TLS:PLAIN
+   - Ref: https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-smtp.c#L473
+- IMAP: CLEAR or APOP (default), LOGIN, PLAIN, CRAM-MD5, CRAM-SHA1,CRAM-SHA256, DIGEST-MD5, NTLM
+   - also supports TLS like: imap://target/TLS:PLAIN
+   - Ref: https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-imap.c#L591
+- POP3: CLEAR (default), LOGIN, PLAIN, CRAM-MD5, CRAM-SHA1, CRAM-SHA256, DIGEST-MD5, NTLM.
+   - also supports TLS like: pop3://target/TLS:PLAIN
+   - Ref: https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-pop3.c#L779
+
+
 ##### IMAP 
 
 Command executed in the directory that contained the passwords and logins list:
