@@ -113,11 +113,11 @@ Was not detected by any rule, and the difficulties related to the detection of I
 
 The promotion fragmentation of packets fragmentation in traffic can happen, for example in these ways:
 
-1. Execution of a traffic in which the packets have a data sizer greater than the MTU;
-2. Sending of packets with a data size smaller or equal to the MTU, however, using techniques to promote the fragmentation;
+1. Seding of a traffic in which the packets have a data sizer greater than the MTU of the targeted computer;
+2. Sending of packets with a data size smaller or equal to the MTU of the targetd computer, however, using techniques to promote the fragmentation;
 3. Reducing the MTU of the computer.
 
-The flood attacks with packets fragmentation were not detected by Suricata.
+The flood attacks with packets fragmentation were not detected by Suricata, and there are difficulties to create rules in this sense due to the difficulty in obtaining informations about traffic related to this type of attack. Moreover, reassembling packets in order to analyse is a resource and time consumpting task, increasing the complexity of attacks investigation.
 
 ## Conclusion
 
