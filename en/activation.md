@@ -2,7 +2,7 @@
 
 [Installation of Mininet-sec](https://github.com/mininet-sec/mininet-sec?tab=readme-ov-file#mininet-sec)
 
-If you get the error message *"No module called Mininet"* during the instllation process, even with Mininet installed in your system, you can execute the folowing commands to solve the problem:
+If you get the error message *"No module called Mininet"* during the instllation process, even with Mininet already installed in your system, you can execute the following commands to solve the problem:
 
 ```
 sudo -i
@@ -11,7 +11,7 @@ git clone https://github.com/mininet/mininet.git
 export PYTHONPATH=$PYTHONPATH:$HOME/mininet
 ```
 
-Kytos-ng is the SDN controller which will be used along with mnsec, in order to crete and manage the connections between the components of the netowork beyond executing other functions. It can be activated in different ways. Each one of the processes further described should be executed in different windows.
+Kytos-ng is the SDN controller which will be used along with mnsec, in order to create and manage the connections between the components of the netowork, beyond executing other functions. It can be activated in different ways. Each one of the processes further described should be executed in different windows.
 
 ### 1. Activate Kytos;
 
@@ -29,7 +29,7 @@ kytosd -f --database mongodb
 
 ### 2. Iniciate mnsec;
 
-**It is important to use root mode while executing these commands.** Mnsec can be used with pre-defined topologies:
+**It is important to use root mode while executing these commands.** Mnsec can be used with pre-defined topologies, for instance:
 
 ```
 cd mininet-sec
