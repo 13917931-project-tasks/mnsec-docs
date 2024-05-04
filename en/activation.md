@@ -11,8 +11,7 @@ git clone https://github.com/mininet/mininet.git
 export PYTHONPATH=$PYTHONPATH:$HOME/mininet
 ```
 
-Kytos-ng is the SDN controller which will be used along with mnsec, in order to create and manage the connections between the components of the netowork, beyond executing other functions. It can be activated in different ways. Each one of the processes further described should be executed in different windows. [Installation of Kytos-ng](https://github.com/kytos-ng/documentation/blob/master/tutorials/napps/development_environment_setup.rst)
-
+[Kytos-ng](https://github.com/kytos-ng/kytos?tab=readme-ov-file#kytos-ngkytos) is the SDN controller which will be used along with mnsec, in order to create and manage the connections between the components of the netowork, beyond executing other functions. It can be activated in different ways. Each one of the processes further described should be executed in different windows. 
 ⚠️ The steps 1 and 3 are not necessary if the user is going to use the topology defined in *firewall.py* file, they are necessary to activate Kytos-ng, in order to allow its use as a remote controller, and stablish the connections between the components of the network (NOS activation), in case of use of a custom topology.
 
 ### 1. Activate Kytos;
