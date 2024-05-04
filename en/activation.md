@@ -2,7 +2,7 @@
 
 [Installation of Mininet-sec](https://github.com/mininet-sec/mininet-sec?tab=readme-ov-file#mininet-sec)
 
-If you get the error message *"No module called Mininet"* during the instllation process, even with Mininet installed in your system, you can execute the folowing commands:
+If you get the error message *"No module called Mininet"* during the instllation process, even with Mininet installed in your system, you can execute the folowing commands to solve the problem:
 
 ```
 sudo -i
