@@ -2,6 +2,15 @@
 
 [Installation of Mininet-sec](https://github.com/mininet-sec/mininet-sec?tab=readme-ov-file#mininet-sec)
 
+If you get the error message *"No module called Mininet"* during the instllation process, even with Mininet installed in your system, you can execute the folowing commands:
+
+```
+sudo -i
+cd ~
+git clone https://github.com/mininet/mininet.git
+export PYTHONPATH=$PYTHONPATH:$HOME/mininet
+```
+
 Kytos-ng is the SDN controller which will be used along with mnsec, in order to crete and manage the connections between the components of the netowork beyond executing other functions. It can be activated in different ways. Each one of the processes further described should be executed in different windows.
 
 ### 1. Activate Kytos;
@@ -47,7 +56,6 @@ nettap1 is a swich which promotes the connection between the internal components
 
 1. nettap1-ethmona: Connection with the internet, promotes the sending of traffic of the firewall towards internet.
 2. nettap1-ethmonb: Connection with the internet, promotes the sending of traffic of the internet towards firewall.
-
 
 
 or the user can create a custom topology, for instance:
