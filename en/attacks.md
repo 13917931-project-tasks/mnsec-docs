@@ -7,11 +7,11 @@ The usage of Mininet-sec detailed in this text was based in the use of the basic
 There are plenty of authentication techniques which can be used in Brute Force attacks: 
 
 - SSH: LOGIN (default), PLAIN, CRAM-MD5, DIGEST-MD5, NTLM
-   - Additionally TLS encryption via STARTTLS can be enforced with the TLS option. Example: smtp://target/TLS:PLAIN; (Reference)[https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-smtp.c#L473].
+   - Additionally TLS encryption via STARTTLS can be enforced with the TLS option. Example: smtp://target/TLS:PLAIN; [Reference](https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-smtp.c#L473).
 - IMAP: CLEAR or APOP (default), LOGIN, PLAIN, CRAM-MD5, CRAM-SHA1,CRAM-SHA256, DIGEST-MD5, NTLM
-   - Also supports TLS like: imap://target/TLS:PLAIN; (Reference)[https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-imap.c#L591]
+   - Also supports TLS like: imap://target/TLS:PLAIN; [Reference](https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-imap.c#L591)
 - POP3: CLEAR (default), LOGIN, PLAIN, CRAM-MD5, CRAM-SHA1, CRAM-SHA256, DIGEST-MD5, NTLM.
-   - Also supports TLS like: pop3://target/TLS:PLAIN; (Reference)[https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-pop3.c#L779]
+   - Also supports TLS like: pop3://target/TLS:PLAIN; [Reference](https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-pop3.c#L779)
 
 In the usage of Mininet-sec documented, the main authentication technique used was LOGIN. The Honeypots Python Package, which is being used in the Mininet-sec project, only supports PLAIN authentication technique, and returns a message of successful execution. Some solutions to this issue, such as modifying Honeypots Package, can be applied in future versions of Mininet-sec. 
 
