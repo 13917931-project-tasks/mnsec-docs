@@ -13,6 +13,8 @@ export PYTHONPATH=$PYTHONPATH:$HOME/mininet
 
 Kytos-ng is the SDN controller which will be used along with mnsec, in order to create and manage the connections between the components of the netowork, beyond executing other functions. It can be activated in different ways. Each one of the processes further described should be executed in different windows.
 
+⚠️ The steps 1 and 3 are not necessary if the user is going to use the topology defined in *firewall.py* file, they are necessary to activate Kytos-ng, in order to allow its use as a remote controller, and stablish the connections between the components of the network (NOS activation), in case of use of a custom topology.
+
 ### 1. Activate Kytos;
 
 ```
@@ -66,7 +68,7 @@ mnsec --topo linear,3 --apps h3:ssh:port=22,h3:http:port=80,h3:ldap,h3:smtp,h3:i
 
 In this case, we are creating a linear topology with 3 hosts (h1,h2,h3), and the h3 has some important ports in h3 defined as open, in order to teste attacks.
 
-### 3. (Optional) Activation of NOS;
+### 3. Activation of NOS;
 
 ```
 for sw in $(curl -s http://127.0.0.1:8181/api/kytos/topology/v3/switches | jq -r '.switches[].id'); do curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/switches/$sw/enable; curl -H 'Content-type: application/json' -X POST http://127.0.0.1:8181/api/kytos/topology/v3/interfaces/switch/$sw/enable; done
