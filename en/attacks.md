@@ -4,18 +4,16 @@ The usage of Mininet-sec detailed in this text was based in the use of the basic
 
 ## Brute Force
 
-There are plenty of authentication techniques which can be used in Brute Force attacks: In this case, the main techinique used is *LOGIN*.
+There are plenty of authentication techniques which can be used in Brute Force attacks: 
 
 - SSH: LOGIN (default), PLAIN, CRAM-MD5, DIGEST-MD5, NTLM
-   - Additionally TLS encryption via STARTTLS can be enforced with the TLS option. Example: smtp://target/TLS:PLAIN
-   - Ref: https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-smtp.c#L473
+   - Additionally TLS encryption via STARTTLS can be enforced with the TLS option. Example: smtp://target/TLS:PLAIN; (Reference)[https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-smtp.c#L473].
 - IMAP: CLEAR or APOP (default), LOGIN, PLAIN, CRAM-MD5, CRAM-SHA1,CRAM-SHA256, DIGEST-MD5, NTLM
-   - also supports TLS like: imap://target/TLS:PLAIN
-   - Ref: https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-imap.c#L591
+   - Also supports TLS like: imap://target/TLS:PLAIN; (Reference)[https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-imap.c#L591]
 - POP3: CLEAR (default), LOGIN, PLAIN, CRAM-MD5, CRAM-SHA1, CRAM-SHA256, DIGEST-MD5, NTLM.
-   - also supports TLS like: pop3://target/TLS:PLAIN
-   - Ref: https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-pop3.c#L779
+   - Also supports TLS like: pop3://target/TLS:PLAIN; (Reference)[https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-pop3.c#L779]
 
+In the usage of Mininet-sec documented, the main authentication technique used was LOGIN. The Honeypots Python Package, which is being used in the Mininet-sec project, only supports PLAIN authentication technique, and returns a message of successful execution. Some solutions to this issue, such as modifying Honeypots Package, can be applied in future versions of Mininet-sec. 
 
 ### IMAP 
 
@@ -94,14 +92,12 @@ Rule that generated alerts:
 
 1. alert tcp $EXTERNAL_NET any -> $HOME_NET 110 (msg: "Possible POP3 Brute Force attack"; flags:S; flow: to_server; threshold: type limit, track by_src, count 5, seconds 20; classtype: credential-theft; sid: 100000138; rev:1;) (self-authored)
 2. alert tcp $EXTERNAL_NET any -> $HOME_NET 110 (msg:"ET SCAN Rapid POP3 Connections - Possible Brute Force Attack"; flow:to_server; flags: S,12; threshold: type both, track by_src, count 30, seconds 120; classtype:misc-activity; sid:2002992; rev:7; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
-3. alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1000013; priority:1; rev:1;)
 
 **IMAP Flood**
 
 Rules that generated alerts:
 
 1. alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"ET SCAN Rapid IMAP Connections - Possible Brute Force Attack"; flow:to_server; flags: S,12; threshold: type both, track by_src, count 30, seconds 60; classtype:misc-activity; sid:2002994; rev:7; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
-2. alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1000013; priority:1; rev:1;)
 
 ### UDP Flood 
 
@@ -115,4 +111,14 @@ Was not detected by any rule, and the difficulties related to the detection of I
 
 ### Fragmentation
 
-Flood attacks which were related to seding packets with high data size, promoting packets fragmentation, were not detected.
+The promotion fragmentation of packets fragmentation in traffic can happen, for example in these ways:
+
+1. Execution of a traffic in which the packets have a data sizer greater than the MTU;
+2. Sending of packets with a data size smaller or equal to the MTU, however, using techniques to promote the fragmentation;
+3. Reducing the MTU of the computer.
+
+The flood attacks with packets fragmentation were not detected by Suricata.
+
+## Conclusion
+
+In general, Suricata made a good detection of attacks promoted, and it was also possible to create new rules for the cases in which the detection was not happening, and the custom rules also had a good performance. Since some rules are based on the features of the packets related to the traffic which we want to create alerts for, some rules triggered for both Brute Force and Flood attacks related to SSH, IMAP and POP3 protocols. The Suricata rules for *Possible Scan M-Sploit R.Shell TCP/UDP* only triggered for Flood attacks. These rules detect attempts of exploitation of the network to detect vulnerabilities, in order to implement remote shell, i.e., is an attack related to attempts of getting control over an targeted computer
