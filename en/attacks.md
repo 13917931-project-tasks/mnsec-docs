@@ -13,7 +13,7 @@ There are plenty of authentication techniques which can be used in Brute Force a
 - POP3: CLEAR (default), LOGIN, PLAIN, CRAM-MD5, CRAM-SHA1, CRAM-SHA256, DIGEST-MD5, NTLM.
    - Also supports TLS like: pop3://target/TLS:PLAIN; [Reference](https://github.com/vanhauser-thc/thc-hydra/blob/master/hydra-pop3.c#L779)
 
-In the usage of Mininet-sec documented, the main authentication technique used was LOGIN. The Honeypots Python Package, which is being used in the Mininet-sec project, only supports PLAIN authentication technique, and returns a message of successful execution. Some solutions to this issue, such as modifying Honeypots Package, can be applied in future versions of Mininet-sec. 
+In the usage of Mininet-sec documented, the main authentication technique used was LOGIN. The Honeypots Python Package, which is being used in the Mininet-sec project, only supports PLAIN authentication technique, and returns a message of successful execution, which can be a problem, since one of the objectives of the use of honeypots is to deceive the attacker and keep them executing commands, in order to be able to better analyse the attack process. Some solutions to this issue, such as modifying Honeypots Package, can be applied in future versions of Mininet-sec. 
 
 ### IMAP 
 
